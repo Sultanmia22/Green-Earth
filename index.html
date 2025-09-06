@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green-Earth</title>
+    <!-- Tailwind and Daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <header>
+        <!-- nav -->
+        <nav class="bg-[#15803D] flex md:flex-row flex-col justify-center md:justify-between md:items-center md:px-[135px] py-6 text-center md:space-y-0 space-y-5">
+            <div>
+                <img class="md:mx-0 mx-auto" src="./assets/Green Earth.png" alt="">
+            </div>
+
+            <ul class="flex md:flex-row space-x-5 text-white justify-center">
+                <li class="cursor-pointer">About</li>
+                <li class="cursor-pointer">Gallery</li>
+                <li class="cursor-pointer">Plant a Tree</li>
+            </ul>
+
+            <div class="bg-[#FACC15] px-5 py-3 text-[#15803D] rounded-full md:w-auto w-40 md:mx-0 mx-auto">
+                <button class="cursor-pointer">Plant a Tree</button>
+            </div>
+        </nav>
+
+        <!-- banner -->
+        <div class="min-h-10 bg-[#CFF0DC] flex md:flex-row md:justify-between items-center md:py-0 py-5">
+            <div>
+                <img src="./assets/hero-leaf1.png" alt="">
+            </div>
+
+            <div class="text-center space-y-4">
+                <h1 class="md:text-5xl text-3xl font-bold">Plant a Tree, Grow a Future</h1>
+                <p class="text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener for future <br>
+                    generations.</p>
+                  <button class="cursor-pointer bg-[#FACC15] px-5 py-3 text-[#15803D] rounded-full">Get Involved</button>   
+            </div>
+
+            <div>
+                <img src="./assets/hero-leaf2.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <main class="bg-[#f0fdf4] min-h-16">
+        <!-- card section -->
+        <section class="w-11/12 mx-auto py-[100px]">
+            <h2 class="text-3xl font-bold text-center py-10">Choose Your Trees</h2>
+            <section class="grid md:grid-cols-12 gap-5">
+                <div class="border md:grid-cols-1 md:col-span-2"></div>
+
+                <div class="border border-red-500 md:grid-cols-3 grid-cols-1 text-center md:col-span-8">
+                   
+                </div>
+
+                <div class="border border-green-600 md:grid-cols-1 md:col-span-2"></div>
+            </section>
+        </section>
+
+        <!-- About Section -->
+
+        <section class="md:w-8/12 mx-auto  md:px-10">
+            <h2 class="text-3xl text-[#1F2937] text-center mb-9">About the Campaign</h2>
+            <div class="flex md:flex-row flex-col justify-center md:items-center md:space-y-0 space-y-5">
+                <div class="md:flex-1">
+                    <img class="mx-auto" src="./assets/about.png" alt="">
+                </div>
+                <div class="md:flex-1 text-[#1F2937] space-y-5 md:text-left text-justify px-5 md:px-0">
+                    <p>Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+                    <ul class="list-disc md:text-left text-justify list-inside md:pl-3">
+                        <li>Restoration of natural habitats</li>
+                        <li>Improvement of air quality</li>
+                        <li>Support for local communities</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
