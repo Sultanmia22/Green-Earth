@@ -4,6 +4,7 @@ const plantCardContainer = document.getElementById("Platcard_Container");
 const cartContainer = document.getElementById('cart_container');
 const totalPriceContainer = document.getElementById('total_PriceContainer')
 const spinnerDiv = document.getElementById('spinner')
+const modalContainer = document.getElementById('modal_container')
 let cartArray = []
 let totalPriceStore = 0;
 
@@ -56,18 +57,42 @@ const loadPlantsCategories = (categoriesId) => {
     });
 };
 
+const loadPlantsDetails = (id) =>{
+    const url = `https://openapi.programming-hero.com/api/plant/${id}`
+    fetch(url)
+    .then((res) => res.json())
+    .then((details) => {
+        showDetailsPlants(details.plants)
+    })
+}
+
+const showDetailsPlants = (details) => {
+    console.log(details)
+    modalContainer.innerHTML = `
+    <div class="space-y-4">
+                    <h2 class="text-xl font-bold">${details.name}</h2>
+                    <div>
+                        <img class="h-[300px]" src="${details.image}" alt="">
+                    </div>
+                    <h2><span class="text-xl font-bold">Category:</span>${details.category}</h2>
+                    <h2><span class="text-xl font-bold">Price:৳</span>${details.price}</h2>
+                    <p><span class="text-xl font-bold">Description:</span>${details.description}</p>
+    </div>
+    `
+    document.getElementById('my_modal_5').showModal()
+}
+
 const showPlantsCategories = (platsInfo) => {
     plantCardContainer.innerHTML = ''
-   console.log(platsInfo);
    platsInfo.forEach((plantInfo) => {
-    // console.log(platInfo.id)
+  
     plantCardContainer.innerHTML += `
     <div class="bg-white flex flex-col justify-between rounded-lg p-5">
         <div class="mb-4">
           <img class="rounded-lg h-[300px] w-[600px] object-cover" src="${plantInfo.image}" alt="">
        </div>
        <div id="${plantInfo.id}" class="space-y-4">
-         <h2 class="font-bold">${plantInfo.name}</h2>
+         <h2 onclick="loadPlantsDetails(${plantInfo.id})" class="font-bold">${plantInfo.name}</h2>
          <p class="text-[#1F2937]">${plantInfo.description}</p>
          <div class="flex justify-between"> 
          <h2 class="bg-[#CFF0DC] text-[#15803D] px-3 py-1 font-medium rounded-full">${plantInfo.category}</h2>
