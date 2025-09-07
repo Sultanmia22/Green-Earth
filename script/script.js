@@ -3,9 +3,19 @@ const plantContainer = document.getElementById("plant_container");
 const plantCardContainer = document.getElementById("Platcard_Container");
 const cartContainer = document.getElementById('cart_container');
 const totalPriceContainer = document.getElementById('total_PriceContainer')
-
+const spinnerDiv = document.getElementById('spinner')
 let cartArray = []
 let totalPriceStore = 0;
+
+const managespinner = (status) =>{
+    if(status === true){
+        spinnerDiv.classList.remove('hidden')
+        plantCardContainer.classList.add('hidden')
+    }else{
+        spinnerDiv.classList.add('hidden')
+        plantCardContainer.classList.remove('hidden')
+    }
+}
 
 const loadCategorie = () => {
   const url = `https://openapi.programming-hero.com/api/categories`;
@@ -37,6 +47,7 @@ plantContainer.addEventListener("click", (e) => {
 });
 
 const loadPlantsCategories = (categoriesId) => {
+    managespinner(true)
   const url = `https://openapi.programming-hero.com/api/category/${categoriesId}`;
   fetch(url)
     .then((res) => res.json())
@@ -68,7 +79,7 @@ const showPlantsCategories = (platsInfo) => {
         `;
   });
 
-   
+     managespinner(false)
 };
 
 plantCardContainer.addEventListener('click',(e) =>{
@@ -95,7 +106,7 @@ const showAddCart = (cartArray)=>{
     cartContainer.innerHTML = ''
    cartArray.forEach((cartItem) =>{
     cartContainer.innerHTML += `
-     <div class=" my-2 flex justify-between items-center p-3 bg-[#F0FDF4]">
+     <div class=" my-2 flex justify-between items-center p-3 bg-[#F0FDF4] rounded-lg">
        <div>
         <h2 class="font-bold">${cartItem.treeName}</h2>
         <p class="text-[#8C8C8C]">৳<span>${cartItem.price}</span></p>
@@ -106,7 +117,13 @@ const showAddCart = (cartArray)=>{
  </div>
     `
    })
-  totalPrice()
+
+   if(cartArray.length === 0){
+    totalPriceContainer.innerHTML = ''
+   }else{
+    totalPrice()
+   }
+  
    
 }
 
@@ -134,7 +151,7 @@ const addPrice = () =>{
         totalPriceStore += item.price
     })
 
-    document.getElementById('totalPriceshow').innerText = totalPriceStore
+    document.getElementById('totalPriceshow').innerText = '৳'+totalPriceStore
 } 
 
 loadCategorie();

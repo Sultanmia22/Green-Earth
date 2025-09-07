@@ -63,9 +63,16 @@
     </header>
 
     <main class="bg-[#F0FDF4]">
+
+        <!-- spinner -->
+
+        
+            
+
         <!-- card section -->
         <section id="plant_container" class="w-11/12 mx-auto py-[100px]">
-            <h2 class="text-3xl font-bold text-center py-10">Choose Your Trees</h2>
+            <div id="spinner" class="mx-auto w-20 hidden"><span class="loading loading-dots loading-xl"></span></div>
+            <h2 class="text-3xl font-bold text-center pb-10 pt-5">Choose Your Trees</h2>
             <section class="grid md:grid-cols-12 gap-5">
                 <div class=" md:grid-cols-1 md:col-span-2">
                     <h2 class="text-xl font-bold">Categories</h2>
@@ -80,12 +87,12 @@
 
                 <div class="bg-white md:grid-cols-1 md:col-span-2 p-4 rounded-lg">
                     <h2 class="text-xl font-bold">Your Cart</h2>
-                    <div id="cart_container">
+                    <div id="cart_container" class="border-b-2 border-gray-200">
 
                     </div>
 
                     <div id="total_PriceContainer">
-                        
+
                     </div>
                 </div>
             </section>
