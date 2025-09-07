@@ -72,7 +72,7 @@ const showDetailsPlants = (details) => {
     <div class="space-y-4">
                     <h2 class="text-xl font-bold">${details.name}</h2>
                     <div>
-                        <img class="h-[300px]" src="${details.image}" alt="">
+                        <img class="h-[300px] w-[500px] object-cover" src="${details.image}" alt="">
                     </div>
                     <h2><span class="text-xl font-bold">Category:</span>${details.category}</h2>
                     <h2><span class="text-xl font-bold">Price:৳</span>${details.price}</h2>
