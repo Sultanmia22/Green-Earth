@@ -8,6 +8,10 @@
     <!-- Tailwind and Daisy UI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,18 +62,32 @@
         </div>
     </header>
 
-    <main class="bg-[#f0fdf4]">
+    <main class="bg-[#F0FDF4]">
         <!-- card section -->
-        <section class="w-11/12 mx-auto py-[100px]">
+        <section id="plant_container" class="w-11/12 mx-auto py-[100px]">
             <h2 class="text-3xl font-bold text-center py-10">Choose Your Trees</h2>
             <section class="grid md:grid-cols-12 gap-5">
-                <div class="border md:grid-cols-1 md:col-span-2"></div>
+                <div class=" md:grid-cols-1 md:col-span-2">
+                    <h2 class="text-xl font-bold">Categories</h2>
+                    <ul id="categorie_container" class="space-y-2 grid md:grid-cols-1 grid-cols-4">
 
-                <div class="border border-red-500 md:grid-cols-3 grid-cols-1 text-center md:col-span-8">
+                    </ul>
+                </div>
+
+                <div id="Platcard_Container" class=" grid md:grid-cols-3 grid-cols-1 gap-5  md:col-span-8">
 
                 </div>
 
-                <div class="border border-green-600 md:grid-cols-1 md:col-span-2"></div>
+                <div class="bg-white md:grid-cols-1 md:col-span-2 p-4 rounded-lg">
+                    <h2 class="text-xl font-bold">Your Cart</h2>
+                    <div id="cart_container">
+
+                    </div>
+
+                    <div id="total_PriceContainer">
+                        
+                    </div>
+                </div>
             </section>
         </section>
 
@@ -128,8 +146,8 @@
                     <option>3</option>
                 </select>
                 <div class="bg-[#FACC15] px-5 py-3 text-[#15803D] rounded-full md:w-auto w-40 md:mx-0 mx-auto">
-                <button class="cursor-pointer">Donate Now</button>
-            </div>
+                    <button class="cursor-pointer">Donate Now</button>
+                </div>
             </form>
         </section>
     </main>
