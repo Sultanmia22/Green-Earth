@@ -31,6 +31,7 @@ const showCategories = (allCategories) => {
   allCategories.forEach((catList) => {
     console.log(catList);
     categoriesContainer.innerHTML += `
+        
         <li id="${catList.id}" class="hover:bg-[#2b9b54] hover:text-white p-2 rounded-sm cursor-pointer">${catList.category_name}</li>
         `;
   });
