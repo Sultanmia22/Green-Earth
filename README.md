@@ -1,4 +1,45 @@
 
+
+
+---
+🌴 API Endpoints
+---
+1. Get 🌴All Plants
+```bash
+https://openapi.programming-hero.com/api/plants
+```
+
+1. Get 🌴All categories <br/>
+```bash
+https://openapi.programming-hero.com/api/categories
+```
+
+
+3. Get 🌴plants by categories <br/>
+```bash
+https://openapi.programming-hero.com/api/category/${id}
+```
+
+```bash
+https://openapi.programming-hero.com/api/category/1
+```
+
+4. Get 🌴Plants Detail <br/>
+
+```bash
+https://openapi.programming-hero.com/api/plant/${id}
+```
+
+```bash
+https://openapi.programming-hero.com/api/plant/1
+```
+---
+
+
+
+
+
+---
 #### 7) Create a README file to answer the following question-
 
 
@@ -32,8 +73,3 @@
 # Answer : 
 ## -> Using templates we can create dynamic strings and dynamic string lines. Using this we can use external values ​​inside the string.
 
-
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
